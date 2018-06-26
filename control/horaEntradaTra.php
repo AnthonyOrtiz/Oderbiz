@@ -5,19 +5,10 @@ session_start();
     
 $cedula = $_SESSION['cedula'];
 
-$time = time() - (60 * 60 * 7);
 
-$fechaactual = getdate($time);
+$fechaFinal = $_POST['fecha'];
 
-
-$entrada = $fechaactual['hours'].":".$fechaactual['minutes'];
-$fecha = $fechaactual['mday']."/".$fechaactual['mon']."/".$fechaactual['year'];
-
-$formato = strtotime($fecha);
-$fechaFinal  = date("m/d/Y",$formato);
-
-$formato = strtotime($entrada);
-$horaFinal  = date("H:i",$formato);
+$horaFinal  = $_POST['hora'];
 
 require_once "../clases/horas.php";
 

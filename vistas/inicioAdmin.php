@@ -87,9 +87,11 @@ session_start();
 
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
-        <!--<script src="../js/reloj.js"></script>-->
+        <script src="https://momentjs.com/downloads/moment.min.js"></script>
+        <script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>   
         <script src="../js/admin.js"></script>
-        <!--<script src="../js/botones.js"></script>-->
+        
+        
     </body>
 
     </html>

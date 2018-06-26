@@ -103,10 +103,12 @@
                                 $h=$horas->generaReporte($_POST["cedula"],$_POST["mes"]);
                                 
     						foreach($h as $dato) {
-                                list($h,$m) = explode(":",$dato->TotalHoras);
-                                $aux1 += $h;
-                                $aux2 += $m;
-
+                                
+                                if (isset($dato->TotalHoras)) {
+                                    list($h,$m) = explode(":",$dato->TotalHoras);
+                                    $aux1 += $h;
+                                    $aux2 += $m;
+                                }
     					    ?>
                                 <tr>
                                     <td>
@@ -208,9 +210,6 @@
     </main>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="../js/jspdf.min.js"></script>
-        <script src="../js/jspdf.plugin.autotable.min.js"></script>
-      
         <script src="../js/reportesTra.js"></script>
 </body>
 

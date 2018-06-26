@@ -7,11 +7,14 @@ $(document).ready(function(){
 
 	$('body').on('click', '.entrada', function(){// on sirve para variables dinamicas que no se estaban en el documento original, sino que se crearon en algun momento del script
 		var aux = $(this).attr('name');			//on solo sirve con clases no id
+		moment.locale('es');
+		var fecha = moment().format('DD/MM/YYYY');
+		var hora = moment().format('H:mm');
 			$.ajax({
 				url: 'http://127.0.0.1/oderbiz3/control/guardarHoraEntrada.php',
-				type: 'GET', // para obtener un valor del php que se desea 
-				data:{},
-				success: function($resultado){//es la variable que retorna el archivo php al que se llame.
+				type: 'POST', // para obtener un valor del php que se desea 
+				data:{fecha,hora},
+				success: function(){//es la variable que retorna el archivo php al que se llame.
 					swal("Entrada registrada", "presione OK para continuar", "success");
 					$("#entrada").css({'opacity':'0.5'});
 			    	$("#entrada").attr("disabled", true);
@@ -28,13 +31,14 @@ $(document).ready(function(){
 	});
 
 	$('body').on('click','.salida', function(){// on sirve para variables dinamicas que no se estaban en el documento original, sino que se crearon en algun momento del script
-		var aux = $(this).attr('name');
+			var aux = $(this).attr('name');
 			var parametro = $("#txt").val();
-		
+			moment.locale('es');
+			var hora = moment().format('H:mm');
 			$.ajax({
 				url: 'http://127.0.0.1/oderbiz3/control/guardarHoraSalida.php',
 				type: 'POST', // para obtener un valor del php que se desea 
-				data:{parametro},
+				data:{parametro,hora},
 				success: function($resultado){//es la variable que retorna el archivo php al que se llame.
 					swal("Salida registrada", "presione OK para continuar", "success");
 					$("#entrada").css({'opacity':'1'});
@@ -103,5 +107,6 @@ $(document).ready(function(){
 	        i = "0" + i;
 	    }
 	    return i;
+	    
 	}
 });

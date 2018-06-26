@@ -18,11 +18,7 @@ $time = time() - (60 * 60 * 7);
 $fechaactual = getdate($time);
 
 
-$salida = $fechaactual['hours'].":".$fechaactual['minutes'];
-$fecha = $fechaactual['mday']."/".$fechaactual['mon']."/".$fechaactual['year'];
-
-$formato = strtotime($salida);
-$salidaFinal  = date("H:i",$formato);
+$salida = $_POST['hora'];
 
 require_once "../clases/horas.php";
 
@@ -65,7 +61,7 @@ $totalFinal  = date("H:i",$formato);
 $_SESSION['estado'] = 0;
 
 
-$resultado = $hora->guardarHoraSalida($salidaFinal,$desc,$cedula,$totalFinal);
+$resultado = $hora->guardarHoraSalida($salida,$desc,$cedula,$totalFinal);
 
 
 ?>
