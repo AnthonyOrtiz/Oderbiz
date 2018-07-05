@@ -25,7 +25,6 @@
 <head>
     <title>REPORTES TRABAJADOR</title>
     <link rel="stylesheet" type="text/css" href="../diseño/css/reportesTra.css">
-
     <link rel="stylesheet" type="text/css" href="../diseño/boots/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../diseño/boots/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../diseño/boots/bootstrap-theme.css">
@@ -210,6 +209,9 @@
     </main>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../js/jspdf.min.js"></script>
+        <script src="../js/jspdf.plugin.autotable.min.js"></script>
+        <!--<script src="../js/pdf.js"></script>-->
         <script src="../js/reportesTra.js"></script>
 </body>
 

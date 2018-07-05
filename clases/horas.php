@@ -69,9 +69,7 @@ class horas extends conectar{
 
   public function generaReporte($ced,$mes){
     $sql = " select * from horas where 
-    cedula ='".$ced."' 
-     and  fecha like  '%".$mes."%'
-    ";
+             fecha like  '%".$mes."%' ";
     
    $datos= $this->db->query($sql);
       $arreglo = array();
