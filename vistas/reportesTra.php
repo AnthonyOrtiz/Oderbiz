@@ -63,13 +63,10 @@
               
 
                 <form  id="formulario1" name="form" method="post" action="">
-                    <p>
-                        <label for="cedula">Cedula:</label>
-                        <input type="text" name="cedula" placeholder="Cedula" autofocus="true" class="form-control" required="true" />
-                    </p>
+                    
                     <p>
                         <label for="mes">Mes:</label>
-                        <input type="text" name="mes" class="form-control" required="true" />
+                        <input type="text" name="mes" placeholder="Mes" class="form-control" required="true" />
                     </p>
 
                     <input type="submit" name="submit" value="BUSCAR" id="SALIDA" class="btn btn-primary btn-lg" />
@@ -90,7 +87,7 @@
                         </thead>
                         <tbody>
                             <?php 
-                             if(isset($_POST["cedula"])){
+                             if(isset($_POST["mes"])){
                                 $h = 0;
                                 $m = 0;
                                 $aux1 = 0;
@@ -99,7 +96,7 @@
                                 $aux4 = '';
                                 $t = '';
                                 $horas=new horas();
-                                $h=$horas->generaReporte($_POST["cedula"],$_POST["mes"]);
+                                $h=$horas->generaReporte($_POST["mes"]);
                                
     						foreach($h as $dato) {
                                 
@@ -189,7 +186,7 @@
                                         $t = '';
                                         $horas=new horas();
 
-                                        $h=$horas->generaReporte($_POST["cedula"],$_POST["mes"]);
+                                        $h=$horas->generaReporte($_POST["mes"]);
                                         $usuario=new usuario();
                                         $u=$usuario->getTrabajadores();
 
@@ -199,7 +196,7 @@
                                     <?php
                                             foreach($h as $dato) {
 
-                                                if ($dato1->cedula == $dato->cedula and isset($_POST["cedula"])) {
+                                                if ($dato1->cedula == $dato->cedula) {
                                                     list($a,$m) = explode(":",$dato->TotalHoras);
                                                     $aux1 += $a;
                                                     $aux2 += $m;
