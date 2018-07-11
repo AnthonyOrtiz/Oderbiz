@@ -4,4 +4,6 @@ $(document).ready(function(){
 	function identificarBTNdisponibilidad(){
 		$(".btn2").css({'opacity':'0.5'});
 	}
+
+	
 });
