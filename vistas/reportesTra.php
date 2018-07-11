@@ -196,7 +196,7 @@
                                     <?php
                                             foreach($h as $dato) {
 
-                                                if ($dato1->cedula == $dato->cedula) {
+                                                if ($dato1->cedula == $dato->cedula and isset($dato->TotalHoras)) {
                                                     list($a,$m) = explode(":",$dato->TotalHoras);
                                                     $aux1 += $a;
                                                     $aux2 += $m;
